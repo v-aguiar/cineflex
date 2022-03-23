@@ -4,7 +4,7 @@ import "./style.css"
 
 export default function Header() {
   return (
-    <header>
+    <header className="Header">
       <Link to="/">
         <h1>CINEFLEX</h1>
       </Link>

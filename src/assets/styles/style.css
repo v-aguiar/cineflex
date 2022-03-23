@@ -1,0 +1,17 @@
+﻿* {
+  /* Color variables */
+  --header-bg: #C3CFD9;
+  --app-orange: #E8833A;
+  --footer-bg: #DFE6ED;
+  --footer-border: #9EADBA;
+  --selected-green: #8DD7CF;
+  --unavailable-yellow: #FBE192;
+  --border-green: #1AAE9E;
+  --border-grey: #7B8B99;
+  --border-yellow: #F7C52B;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
