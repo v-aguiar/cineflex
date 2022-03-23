@@ -1,8 +1,10 @@
 ﻿.Movies {
   margin-top: 67px;
+
+  overflow-y: auto;
 }
 
-.Movies h2 {
+.Movies .description {
   height: 110px;
   width: 100%;
 

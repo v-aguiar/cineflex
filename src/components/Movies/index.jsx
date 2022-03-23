@@ -2,7 +2,6 @@
 import {Link} from "react-router-dom"
 
 import axios from "axios"
-import {v4 as uuidv4} from "uuid"
 
 import loading from "../../assets/img/loading.gif"
 
@@ -34,7 +33,7 @@ export default function Movies() {
       <ul className="container">
         {movies.map(movie => {
           return (
-            <li key={uuidv4()} className="imgWrapper">
+            <li key={movie.id} className="imgWrapper">
               <Link to={path + movie.id}>
                 <img src={movie.posterURL} alt="Movie poster" />
               </Link>
