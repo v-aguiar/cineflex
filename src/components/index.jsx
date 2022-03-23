@@ -2,7 +2,8 @@
 
 import Header from "./Header"
 import Movies from "./Movies"
-import Sections from "./Sections"
+import Sessions from "./Sessions"
+
 
 import "../assets/styles/reset.css"
 import "../assets/styles/style.css"
@@ -13,7 +14,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Movies />} />
-        <Route path="/sessoes" element={<Sections />} />
+        <Route path="/sessoes/:movieId" element={<Sessions />} />
       </Routes>
     </Router>
   )

@@ -10,6 +10,7 @@ import "./style.css"
 
 export default function Movies() {
   const [movies, setMovies] = useState([])
+  const path = "/sessoes/"
 
   useEffect(() => {
     const request = axios.get("https://mock-api.driven.com.br/api/v5/cineflex/movies")
@@ -34,8 +35,8 @@ export default function Movies() {
         {movies.map(movie => {
           return (
             <li key={uuidv4()} className="imgWrapper">
-              <Link to="/sessoes">
-                <img src={movie.posterURL} alt="Movie cover" />
+              <Link to={path + movie.id}>
+                <img src={movie.posterURL} alt="Movie poster" />
               </Link>
             </li>
           )
