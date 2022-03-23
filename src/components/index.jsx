@@ -1,18 +1,20 @@
-﻿import {BrowserRouter, Routes, Route} from "react-router-dom"
+﻿import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 import Header from "./Header"
+import Movies from "./Movies"
+import Sections from "./Sections"
 
 import "../assets/styles/reset.css"
 import "../assets/styles/style.css"
-import Movies from "./Movies"
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Header />
       <Routes>
         <Route path="/" element={<Movies />} />
+        <Route path="/sessoes" element={<Sections />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   )
 }

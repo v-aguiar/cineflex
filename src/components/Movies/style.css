@@ -7,6 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  color: var(--text-black);
+  font-size: 24px;
 }
 
 .Movies .container {
@@ -14,6 +17,9 @@
 
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3px;
+  margin-right: 3px;
 }
 
 .Movies .imgWrapper {
@@ -31,4 +37,21 @@
 .Movies img {
   height: 193px;
   width: 129px;
+}
+
+/* ******* Loading screen ******* */
+
+.Movies.--loading {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f1f2f3;
+}
+
+.Movies.--loading img {
+  width: initial;
 }
