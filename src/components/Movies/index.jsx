@@ -9,6 +9,7 @@ import "./style.css"
 
 export default function Movies() {
   const [movies, setMovies] = useState([])
+
   const path = "/sessoes/"
 
   useEffect(() => {

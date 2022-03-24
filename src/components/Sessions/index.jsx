@@ -12,6 +12,7 @@ export default function Sessions() {
   const {movieId} = useParams()
 
   const days = sessions.days
+  const path = "/assentos/"
 
   useEffect(() => {
     const request = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${movieId}/showtimes`)
@@ -44,7 +45,7 @@ export default function Sessions() {
                 {day.showtimes.map(showtime => {
                   return (
                     <li className="showtime" key={showtime.id}>
-                      <Link to="/">{showtime.name}</Link>
+                      <Link to={path + showtime.id}>{showtime.name}</Link>
                     </li>
                   )
                 })}

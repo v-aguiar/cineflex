@@ -483,10 +483,10 @@
         [Cineflex](https://www.figma.com/file/rc7ZTYfLZg9zpGahWB1aXb/Cineflex?node-id=0%3A1)
         
 - Escolha de Filme (rota "/")
-    - [ ]  Buscar as informações dos filmes pela API fornecida e exibir conforme layout fornecido
-    - [ ]  Ao clicar em um filme, o usuário deve ser redirecionado para a rota "/sessoes/:idFilme", sendo :idFilme o id do filme clicado
+    - [X]  Buscar as informações dos filmes pela API fornecida e exibir conforme layout fornecido
+    - [X]  Ao clicar em um filme, o usuário deve ser redirecionado para a rota "/sessoes/:idFilme", sendo :idFilme o id do filme clicado
 - Escolha de Sessão (rota "/sessoes/:idFilme")
-    - [ ]  A partir do id da URL, obtenha da API as sessões disponíveis para o filme e exiba conforme o layout fornecido
+    - [X]  A partir do id da URL, obtenha da API as sessões disponíveis para o filme e exiba conforme o layout fornecido
     - [ ]  Ao clicar em uma sessão, o usuário deve ser redirecionado para a rota "/assentos/:idSessao", onde :idSessao é o id da sessão escolhida
 - Escolha de Assento (rota "/assentos/:idSessao")
     - [ ]  A partir do id da sessão, buscar os dados da sessão da API e exibir o layout conforme fornecido
