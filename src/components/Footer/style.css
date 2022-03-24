@@ -37,7 +37,17 @@
   width: 48px;
 }
 
+.Footer .movie-date {
+  display: flex;
+  flex-direction: column;
+
+  color: var(--text-black);
+  font-size: 26px;
+}
+
 .Footer .movie-title {
   color: var(--text-black);
   font-size: 26px;
+
+  margin-bottom: 8px;
 }

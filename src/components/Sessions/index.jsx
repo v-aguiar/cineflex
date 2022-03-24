@@ -55,7 +55,7 @@ export default function Sessions() {
         })}
       </ul>
 
-      <Footer image={sessions.posterURL} title={sessions.title} />
+      <Footer data={sessions} isSeatComponent={false} />
     </section>
   )
 }

@@ -72,7 +72,7 @@ export default function Seats() {
 
       <DataInput selectedSeats={selectedSeats} seats={seats} />
 
-      <Footer image={seats.movie.posterURL} title={seats.movie.title} />
+      <Footer data={seats} isSeatComponent={true} />
     </section>
   )
 }
