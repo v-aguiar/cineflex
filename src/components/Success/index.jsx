@@ -22,7 +22,7 @@ export default function Success() {
         </li>
         <li>
           <h3 className="header">Ingressos</h3>
-          {seats.map(seat => <p>{`Assento ${seat}`}</p>)}
+          {seats.map(seat => <p key={seat}>{`Assento ${seat}`}</p>)}
         </li>
         <li>
           <h3 className="header">Comprador</h3>
