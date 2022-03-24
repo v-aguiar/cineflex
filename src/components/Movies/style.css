@@ -41,6 +41,15 @@
   width: 129px;
 }
 
+.Movies a {
+  transition: .3s;
+}
+
+.Movies a:hover {
+  cursor: pointer;
+  filter: brightness(.5);
+}
+
 /* ******* Loading screen ******* */
 
 .Movies.--loading {

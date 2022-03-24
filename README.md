@@ -26,7 +26,7 @@
     - [X]  O usuário pode selecionar vários assentos
     - [X]  O usuário deve poder inserir o nome e o CPF do comprador
     - [X]  Ao clicar em "Reservar assento(s)", o pedido deve ser enviado para o servidor e o usuário deve ser redirecionado para a rota "/sucesso".  Isso fará com os assentos marcados fiquem indisponíveis para outras marcações.
-- [ ] Rodapé
+- [X] Rodapé
     - [X]  Ao longo das telas de Sessão e Assento, deve ser exibido um rodapé com as informações do filme selecionado. Estas informações virão das chamadas à API em cada tela
 - [X] Sucesso
     - [X]  Implementar layout conforme fornecido, exibindo os dados do pedido feito

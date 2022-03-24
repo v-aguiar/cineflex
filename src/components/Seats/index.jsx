@@ -33,9 +33,11 @@ export default function Seats() {
         ------- > remove seat and id from selectedSeats array, keeps previous selected seats data
         else -- > add current selected seat and id to SelectedSeats array
     */
-    if(!(selectedSeats.includes(seat) && selectedSeats.length > 0)) {
+    if(!(selectedSeats.filter(selectedSeat => selectedSeat.seat === seat).length > 0 && selectedSeats.length > 0)) {
+      // Selecting
       setSelectedSeats([...selectedSeats, {seat: seat, id: id}])
     } else {
+      // Removing
       setSelectedSeats([...selectedSeats].filter(selected => selected.seat !== seat))
     }
   }
