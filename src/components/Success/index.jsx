@@ -1,4 +1,5 @@
 ﻿import {Link, useLocation} from "react-router-dom"
+import {useEffect} from "react"
 
 import "./style.css"
 
@@ -6,6 +7,8 @@ export default function Success() {
   const location = useLocation()
 
   const {name, cpf, title, date, seats} = location.state
+
+  useEffect(() => {window.scrollTo({top: 0, behavior: 'smooth'})}, [])
 
   return (
     <section className="Success">

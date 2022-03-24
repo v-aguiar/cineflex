@@ -33,7 +33,9 @@ export default function Seats() {
   }
 
   function addSeat(selectedSeat) {
-    setSelectedSeats([...selectedSeats, selectedSeat])
+    console.log(selectedSeat)
+
+    !(selectedSeats.includes(selectedSeat) && selectedSeats.length > 0) ? setSelectedSeats([...selectedSeats, selectedSeat]) : setSelectedSeats([...selectedSeats])
 
     console.log("selected seats: ", selectedSeats)
   }
@@ -51,15 +53,7 @@ export default function Seats() {
     <section className="Seats">
       <h2 className="description">Selecione o assento</h2>
 
-      <ul className="seats">
-        {seatsData.map((seat) => {
-          return (
-            <li key={seat.id} onClick={() => addSeat(seat.name)} className={`seat ${seat.isAvailable ? "" : "--unavailable"}`}>
-              <p className="seat-number" >{seat.name}</p>
-            </li>
-          )
-        })}
-      </ul>
+      <SeatsList seatsData={seatsData} addSeat={addSeat} />
 
       <ul className="seats-caption">
         <li className="caption-option">
@@ -97,3 +91,38 @@ export default function Seats() {
     </section>
   )
 }
+
+function SeatsList({seatsData, addSeat}) {
+  return (
+    <ul className="seats">
+      {seatsData.map(seat => <Seat key={seat.id} addSeat={addSeat} seat={seat} />)}
+    </ul>
+  )
+}
+
+function Seat({addSeat, seat}) {
+  const [isSelected, setIsSelected] = useState(false)
+
+  function toogleSelected() {
+    setIsSelected(!isSelected)
+  }
+
+  if(!seat.isAvailable) {
+    return (
+      <li className="seat --unavailable" onClick={() => alert("NOPE!")}>
+        <p className="seat-number" >{seat.name}</p>
+      </li>
+    )
+  }
+
+  return (
+    <li onClick={() => {
+      addSeat(seat.name)
+      toogleSelected()
+    }} className={isSelected ? "seat --selected" : "seat"}>
+      <p className="seat-number" >{seat.name}</p>
+    </li>
+  )
+}
+
+
