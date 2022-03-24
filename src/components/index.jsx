@@ -4,7 +4,7 @@ import Header from "./Header"
 import Movies from "./Movies"
 import Sessions from "./Sessions"
 import Seats from "./Seats"
-
+import Success from "./Success"
 
 import "../assets/styles/reset.css"
 import "../assets/styles/style.css"
@@ -16,7 +16,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Movies />} />
         <Route path="/sessoes/:movieId" element={<Sessions />} />
-        <Route path="/assentos/:sessionId" element={<Seats />}></Route>
+        <Route path="/assentos/:sessionId" element={<Seats />} />
+        <Route path="/assentos/:sessionId" element={<Seats />} />
+        <Route path="/sucesso" element={<Success />} />
       </Routes>
     </Router>
   )

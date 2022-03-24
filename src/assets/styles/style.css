@@ -10,9 +10,13 @@
   --border-grey: #7B8B99;
   --border-yellow: #F7C52B;
   --text-black: #293845;
+  --text-green: #247A6B;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  color: var(--text-black);
+
+  background-color: #fff;
 }

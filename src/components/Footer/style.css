@@ -1,0 +1,43 @@
+﻿.Footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  height: 117px;
+  width: 100%;
+
+  padding: 10px;
+
+  background-color: var(--footer-bg);
+
+  border: 1px solid var(--footer-border);
+
+  display: flex;
+  align-items: center;
+}
+
+.Footer .imgWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 89px;
+  width: 64px;
+
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+
+  margin-right: 14px;
+
+  background-color: #fff;
+}
+
+.Footer img {
+  height: 72px;
+  width: 48px;
+}
+
+.Footer .movie-title {
+  color: var(--text-black);
+  font-size: 26px;
+}

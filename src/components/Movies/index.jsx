@@ -3,28 +3,28 @@ import {Link} from "react-router-dom"
 
 import axios from "axios"
 
-import loading from "../../assets/img/loading.gif"
+import Loading from "../Loading"
 
 import "./style.css"
 
 export default function Movies() {
   const [movies, setMovies] = useState([])
 
-  const path = "/sessoes/"
+  window.scrollTo({top: 0, behavior: 'smooth'})
 
-  useEffect(() => {
+  function getMovies() {
     const request = axios.get("https://mock-api.driven.com.br/api/v5/cineflex/movies")
 
     request.then((response) => {
       setMovies(response.data)
     })
-  }, [])
+  }
+
+  useEffect(() => getMovies(), [])
 
   if(movies.length === 0) {
     return (
-      <div className="Movies --loading">
-        <img src={loading} alt="loading gif" />
-      </div>
+      <Loading />
     )
   }
 
@@ -35,7 +35,7 @@ export default function Movies() {
         {movies.map(movie => {
           return (
             <li key={movie.id} className="imgWrapper">
-              <Link to={path + movie.id}>
+              <Link to={`/sessoes/${movie.id}`}>
                 <img src={movie.posterURL} alt="Movie poster" />
               </Link>
             </li>

@@ -1,0 +1,63 @@
+﻿.Success {
+  margin-top: 67px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Success .description {
+  height: 110px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-green);
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.Success .data {
+  padding: 0 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.Success .data li {
+  margin-bottom: 55px;
+}
+
+.Success .data .header {
+  font-size: 24px;
+  font-weight: 700;
+
+  margin-bottom: 10px;
+}
+
+.Success .data p {
+  font-size: 22px;
+
+  margin-bottom: 5px;
+}
+
+.Success .button {
+  text-decoration: none;
+  color: #fff;
+
+  background-color: var(--app-orange);
+
+  border: none;
+  border-radius: 3px;
+
+  height: 42px;
+  padding: 0 36px;
+  margin: 30px auto 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

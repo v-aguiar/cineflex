@@ -1,33 +1,49 @@
-﻿import {useParams} from "react-router-dom";
+﻿import {Link, useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 
 import axios from "axios";
 
-import loading from "../../assets/img/loading.gif"
+import Loading from "../Loading";
+import Footer from "../Footer";
 
 import "./style.css"
 
 export default function Seats() {
   const [seats, setSeats] = useState([])
+  const [selectedSeats, setSelectedSeats] = useState([])
+  const [buyerName, setBuyerName] = useState("")
+  const [buyerCPF, setBuyerCPF] = useState("")
 
-  const seatsData = seats.seats
   const {sessionId} = useParams()
 
-  useEffect(() => {
-    const request = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${sessionId}/seats`)
+  const seatsData = seats.seats
+
+  function getSeats(id) {
+    const request = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${id}/seats`)
 
     request.then((response) => {
       setSeats(response.data)
       console.log("seats: ", response.data)
     })
     request.catch((err) => console.error("Erro: ", err.reponse))
-  }, [sessionId])
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault()
+  }
+
+  function addSeat(selectedSeat) {
+    setSelectedSeats([...selectedSeats, selectedSeat])
+
+    console.log("selected seats: ", selectedSeats)
+  }
+
+  useEffect(() => {window.scrollTo({top: 0, behavior: 'smooth'})}, [])
+  useEffect(() => getSeats(sessionId), [sessionId])
 
   if(seats.length === 0) {
     return (
-      <div className="Seats --loading">
-        <img src={loading} alt="loading gif" />
-      </div>
+      <Loading />
     )
   }
 
@@ -38,8 +54,8 @@ export default function Seats() {
       <ul className="seats">
         {seatsData.map((seat) => {
           return (
-            <li key={seat.id} className={`seat ${seat.isAvailable ? "" : "--unavailable"}`}>
-              <p className="seat-number">{seat.name}</p>
+            <li key={seat.id} onClick={() => addSeat(seat.name)} className={`seat ${seat.isAvailable ? "" : "--unavailable"}`}>
+              <p className="seat-number" >{seat.name}</p>
             </li>
           )
         })}
@@ -60,21 +76,24 @@ export default function Seats() {
         </li>
       </ul>
 
-      <form action="/" className="data-input">
-        <label htmlFor="username">Nome do comprador: </label>
-        <input placeholder="Digite seu nome..." type="text" id="username" required />
-        <label htmlFor="userCpf">CPF do comprador: </label>
-        <input placeholder="Digite seu CPF..." type="number" id="userCpf" minLength="11" required />
+      <form onSubmit={handleSubmit} className="data-input">
+        <label htmlFor="username">Nome do comprador:
+          <input name="buyerName" placeholder="Digite seu nome..." type="text" id="username" value={buyerName} onChange={(event) => setBuyerName(event.target.value)} required />
+        </label>
+        <label htmlFor="userCpf">CPF do comprador:
+          <input name="buyerCPF" placeholder="Digite seu CPF..." type="number" id="userCpf" value={buyerCPF} onChange={(event) => setBuyerCPF(event.target.value)} minLength="11" required />
+        </label>
 
-        <button type="submit">Reservar assento(s)</button>
+        <Link to="/sucesso" type="submit" className="button" state={{
+          name: buyerName,
+          cpf: buyerCPF,
+          title: seats.movie.title,
+          date: `${seats.name} ${seats.day.date}`,
+          seats: selectedSeats
+        }} >Reservar assento(s)</Link>
       </form>
 
-      <article className="footer">
-        <div className="imgWrapper">
-          <img src={seats.movie.posterURL} alt="Movie poster" />
-        </div>
-        <p className="movie-title">{seats.movie.title}</p>
-      </article>
+      <Footer image={seats.movie.posterURL} title={seats.movie.title} />
     </section>
   )
 }

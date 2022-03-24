@@ -100,10 +100,8 @@
   color: var(--text-black);
   font-size: 18px;
 
-  margin-bottom: 8px;
-
   display: inline-block;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .Seats .data-input input {
@@ -118,7 +116,7 @@
   display: flex;
   align-items: center;
 
-  margin-bottom: 7px;
+  margin: 5px 0 14px;
 
   font-size: 18px;
 }
@@ -127,79 +125,20 @@
   color: var(--border-grey);
 }
 
-.Seats .data-input button {
+.Seats .data-input .button {
+  text-decoration: none;
   color: #fff;
+
   background-color: var(--app-orange);
 
   border: none;
   border-radius: 3px;
 
   height: 42px;
-
   padding: 0 36px;
-
-  margin: 30px auto 15px
-}
-
-/* ******* Footer ******* */
-
-.Seats .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-
-  height: 117px;
-  width: 100%;
-
-  padding: 10px;
-
-  background-color: var(--footer-bg);
-
-  border: 1px solid var(--footer-border);
-
-  display: flex;
-  align-items: center;
-}
-
-.Seats .footer .imgWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 89px;
-  width: 64px;
-
-  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-
-  margin-right: 14px;
-
-  background-color: #fff;
-}
-
-.Seats .footer img {
-  height: 72px;
-  width: 48px;
-}
-
-.Session .footer .movie-title {
-  color: var(--text-black);
-  font-size: 26px;
-}
-
-/* ******* Loading screen ******* */
-
-.Seats.--loading {
-  height: 100vh;
-  width: 100%;
+  margin: 30px auto 15px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background-color: #f1f2f3;
-}
-
-.Seats.--loading img {
-  width: initial;
 }
