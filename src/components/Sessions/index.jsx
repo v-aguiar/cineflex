@@ -21,7 +21,6 @@ export default function Sessions() {
 
     request.then((response) => {
       setSessions(response.data)
-      console.log(response.data)
     })
   }
 
