@@ -9,7 +9,7 @@ export default function Seat({addSeat, seat}) {
 
   if(!seat.isAvailable) {
     return (
-      <li className="seat --unavailable" onClick={() => alert("NOPE!")}>
+      <li className="seat --unavailable" onClick={() => alert("Este assento não está disponível!")}>
         <p className="seat-number" >{seat.name}</p>
       </li>
     )
@@ -17,7 +17,7 @@ export default function Seat({addSeat, seat}) {
 
   return (
     <li onClick={() => {
-      addSeat(seat.name)
+      addSeat(seat.name, seat.id)
       toogleSelected()
     }} className={isSelected ? "seat --selected" : "seat"}>
       <p className="seat-number" >{seat.name}</p>

@@ -27,17 +27,17 @@ export default function Seats() {
     request.catch((err) => console.error("Erro: ", err.reponse))
   }
 
-  function handleSubmit(event) {
-    event.preventDefault()
-  }
-
-  function addSeat(selectedSeat) {
+  function addSeat(seat, id) {
     /* 
       if current selected seat has alredy been selected 
-        ------- > remove seat from selectedSeats array, keeps previous selected seats 
-        else -- > add current selected seat to SelectedSeats array
+        ------- > remove seat and id from selectedSeats array, keeps previous selected seats data
+        else -- > add current selected seat and id to SelectedSeats array
     */
-    !(selectedSeats.includes(selectedSeat) && selectedSeats.length > 0) ? setSelectedSeats([...selectedSeats, selectedSeat]) : setSelectedSeats([...selectedSeats].filter(selected => selected !== selectedSeat))
+    if(!(selectedSeats.includes(seat) && selectedSeats.length > 0)) {
+      setSelectedSeats([...selectedSeats, {seat: seat, id: id}])
+    } else {
+      setSelectedSeats([...selectedSeats].filter(selected => selected.seat !== seat))
+    }
   }
 
   useEffect(() => {window.scrollTo({top: 0, behavior: 'smooth'})}, [])
@@ -70,7 +70,7 @@ export default function Seats() {
         </li>
       </ul>
 
-      <DataInput handleSubmit={handleSubmit} selectedSeats={selectedSeats} seats={seats} />
+      <DataInput selectedSeats={selectedSeats} seats={seats} />
 
       <Footer image={seats.movie.posterURL} title={seats.movie.title} />
     </section>
