@@ -1,0 +1,65 @@
+﻿.data-input {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.data-input label {
+  color: var(--text-black);
+  font-size: 18px;
+
+  display: inline-block;
+  align-self: center;
+}
+
+.data-input input {
+  border: solid 1px var(--border-grey);
+  outline: none;
+
+  height: 51px;
+  width: 100%;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+
+  margin: 5px 0 14px;
+
+  font-size: 18px;
+}
+
+.data-input input::placeholder {
+  color: var(--border-grey);
+}
+
+.data-input .button {
+  color: #fff;
+
+  background-color: var(--app-orange);
+
+  border: none;
+  border-radius: 3px;
+
+  height: 42px;
+  padding: 0 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-input a {
+  text-decoration: none;
+  margin: 30px auto 15px;
+}
+
+.data-input .error {
+  color: var(--app-orange);
+  font-size: 12px;
+
+  margin-bottom: 10px;
+}
