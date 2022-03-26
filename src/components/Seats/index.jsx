@@ -34,10 +34,10 @@ export default function Seats() {
         else -- > add current selected seat and id to SelectedSeats array
     */
     if(!(selectedSeats.filter(selectedSeat => selectedSeat.seat === seat).length > 0 && selectedSeats.length > 0)) {
-      // Selecting
+      // Selecting seat
       setSelectedSeats([...selectedSeats, {seat: seat, id: id}])
     } else {
-      // Removing
+      // Removing seat
       setSelectedSeats([...selectedSeats].filter(selected => selected.seat !== seat))
     }
   }

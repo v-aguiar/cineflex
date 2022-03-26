@@ -26,8 +26,8 @@ export default function DataInput({selectedSeats, seats}) {
   }
 
   /** 
-  *  Hook to validate input data, based on "https://felixgerschau.com/react-hooks-form-validation-typescript/" article
-  *  adapted to fit application requirements and necessary validations
+  *  Hook to validate multiple input data, based on "https://felixgerschau.com/react-hooks-form-validation-typescript/" article
+  *  adapted to fit Cineflex application requirements and necessary validations
   **/
   const useForm = (options) => {
     // Vinculate passed initial values to data state (keys and values)
@@ -127,11 +127,11 @@ export default function DataInput({selectedSeats, seats}) {
         pattern: {
           // Regexp to validate names (international names included)
           value: "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$",
-          message: "Nome inválido..."
+          message: "Insira um nome válido..."
         },
         required: {
           value: true,
-          message: "Insira um nome..."
+          message: "Insira um nome válido..."
         }
       },
       // Set cpf input rules for validation (?pattern, ?required, ?custom)
@@ -139,11 +139,11 @@ export default function DataInput({selectedSeats, seats}) {
         pattern: {
           // Regexp to validate CPF number with or without special characters
           value: '([0-9]{3}[0-9]{3}[0-9]{3}[0-9]{2})',
-          message: "Insira um CPF válido (Apenas números)..."
+          message: "Insira um CPF válido (Apenas 11 números)..."
         },
         required: {
           value: true,
-          message: "Insira um CPF válido (Apenas números)..."
+          message: "Insira um CPF válido (Apenas 11 números)..."
         }
       }
     },
@@ -151,8 +151,8 @@ export default function DataInput({selectedSeats, seats}) {
     onSubmit: () => postData(),
     // Set which keys and values will be managed by data State
     initialValues: {
-      name: "",
-      cpf: ""
+      name: buyerName,
+      cpf: buyerCPF
     }
   })
 
