@@ -15,6 +15,36 @@
   height: 67px;
 }
 
+.Header button {
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  background-color: var(--app-orange);
+
+  height: 35px;
+  min-width: 65px;
+
+  margin-right: 8px;
+
+  border: none;
+  border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  left: 30px;
+
+  transition: .5s;
+}
+
+.Header button:hover {
+  filter: brightness(1.2);
+  cursor: pointer;
+  /* filter: hue-rotate(180deg); Create a color transition on hover (for further studies)*/
+}
+
 .Header a {
   text-decoration: none;
 }

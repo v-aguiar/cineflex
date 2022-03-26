@@ -34,15 +34,15 @@
 
 ### Bônus (opcional)
 
-- Botão de voltar
-    - [ ]  Adicione um botão de voltar no topo do site à esquerda
+- [X] Botão de voltar
+    - [X]  Adicione um botão de voltar no topo do site à esquerda
     - [X]  O topo do site deve estar fora dos componentes das páginas, ou seja, fora do <Switch> do React Router
-    - [ ]  Ao clicar no botão voltar, o usuário deve retornar para a página que estava anteriormente
+    - [X]  Ao clicar no botão voltar, o usuário deve retornar para a página que estava anteriormente
         
         **Dica**: pesquise pela função `useHistory()` do React Router
         
-    - [ ]  O botão não deve ser exibido na tela inicial
-- Informação de comprador por assento
+    - [X]  O botão não deve ser exibido na tela inicial
+- [ } Informação de comprador por assento
   - [ ]  Faça com que os campos de Nome e CPF do comprador deixem de ser um único campo para serem campos pra cada assento selecionado. Ou seja, cada assento selecionado terá seu próprio Nome e CPF
   - [ ]  Conforme a pessoa for selecionando assentos, os campos devem ser exibidos abaixo na quantidade condizente com os assentos selecionados
   - [ ]  Ao desmarcar um assento que já possuía dados preenchidos, pergunte ao usuário com um **confirm** se ele gostaria realmente de remover o assento e apagar os dados
