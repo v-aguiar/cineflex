@@ -8,6 +8,16 @@ export default function Success() {
 
   const {name, cpf, title, date, seats} = location.state
 
+  const formattedCpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, (
+    regex,
+    arg1,
+    arg2,
+    arg3,
+    arg4
+  ) => {
+    return (`${arg1}.${arg2}.${arg3}-${arg4}`)
+  })
+
   useEffect(() => {window.scrollTo({top: 0, behavior: 'smooth'})}, [])
 
   return (
@@ -27,7 +37,7 @@ export default function Success() {
         <li>
           <h3 className="header">Comprador</h3>
           <p>{`Nome: ${name}`}</p>
-          <p>{`CPF: ${cpf}`}</p>
+          <p>{`CPF: ${formattedCpf}`}</p>
         </li>
       </ul>
 
